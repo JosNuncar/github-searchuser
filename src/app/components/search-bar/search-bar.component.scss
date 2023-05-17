@@ -1,0 +1,72 @@
+@import "src/styles.scss";
+
+.search-form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 15px;
+  background: var(--card-bg);
+  width: 100%;
+  padding: 0.75rem;
+  gap: 0.5rem;
+  box-shadow: var(--input-box-shadow);
+
+  .input-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    @include respond-to("tablet") {
+      gap: 24px;
+    }
+
+    .search-input {
+      width: 100%;
+      font-size: 11px;
+      font-family: "Space Mono", monospace;
+      outline: none;
+      border: 0;
+      background: inherit;
+      color: var(--accent-text);
+
+      &::-webkit-input-placeholder {
+        color: var(--accent-text);
+      }
+
+      @include respond-to("tablet") {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .error-message {
+    color: var(--error-text);
+    font-size: 11px;
+    width: 50%;
+    text-align: right;
+  }
+
+  .search-button {
+    padding: 12.5px 16px;
+    width: 85px;
+    height: 45px;
+    border-radius: 10px;
+    color: white;
+    border: none;
+    background: var(--button-bg);
+    font-family: "Space Mono", monospace;
+
+    @include respond-to("tablet") {
+      width: 106px;
+      height: 50px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background: var(--button-hover-bg);
+    }
+  }
+}

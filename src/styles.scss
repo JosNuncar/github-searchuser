@@ -1,0 +1,74 @@
+$breakpoints: (
+  "mobile": (
+    min-width: 375px,
+  ),
+  "tablet": (
+    min-width: 700px,
+  ),
+  "desktop": (
+    min-width: 1000px,
+  ),
+) !default;
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @warn "no value from `#{$breakpoint}`. "
+        + "available: #{map-keys($breakpoints)}.";
+  }
+}
+
+:root {
+  --button-bg: rgb(0, 121, 255);
+  --button-hover-bg: rgb(96, 171, 255);
+  --primary-bg: rgb(246, 248, 255);
+  --card-bg: rgb(254, 254, 254);
+  --primary-text: rgb(43, 52, 66);
+  --secondary-text: rgb(105, 124, 154);
+  --accent-text: rgb(75, 106, 155);
+  --error-text: rgb(247, 70, 70);
+  --bold: 700;
+  --regular: 400;
+  --input-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+
+  .dark-theme {
+    --primary-bg: rgb(20, 29, 47);
+    --card-bg: rgb(30, 42, 71);
+    --primary-text: rgb(255, 255, 255);
+    --icon-hover: rgb(144, 164, 212);
+    --input-box-shadow: none;
+    --accent-text: rgb(255, 255, 255);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  font-family: "Space Mono", monospace;
+  line-height: 25px;
+  font-size: 15px;
+  font-weight: var(--regular);
+  padding: 32px 24px;
+  transition-duration: 500ms;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+
+  @include respond-to("tablet") {
+    align-items: center;
+  }
+}

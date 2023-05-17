@@ -1,0 +1,33 @@
+<div class="header-container" *ngIf="!isLargeScreen; else largeScreen">
+  <h2 class="user-name">
+    <b *ngIf="userInfo.name; else noName">{{ userInfo.name }}</b>
+    <ng-template #noName class="not-available"
+      ><b>Not Available</b></ng-template
+    >
+  </h2>
+  <a class="gh-user-page" href="{{ userInfo.htmlUrl }}"
+    >@{{ userInfo.login }}</a
+  >
+  <p class="joined-date">
+    Joined {{ userInfo.createdAt | date: "dd MMM yyyy" }}
+  </p>
+</div>
+
+<ng-template #largeScreen>
+  <div class="header-container desktop">
+    <div class="name-date">
+      <h2 class="user-name">
+        <b *ngIf="userInfo.name; else noName">{{ userInfo.name }}</b>
+        <ng-template #noName class="not-available"
+          ><b>Not Available</b></ng-template
+        >
+      </h2>
+      <p class="joined-date">
+        Joined {{ userInfo.createdAt | date: "dd MMM yyyy" }}
+      </p>
+    </div>
+    <a class="gh-user-page" href="{{ userInfo.htmlUrl }}"
+      >@{{ userInfo.login }}</a
+    >
+  </div>
+</ng-template>

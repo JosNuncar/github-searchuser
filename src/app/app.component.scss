@@ -1,0 +1,16 @@
+main {
+  max-width: 730px;
+  margin: 0 auto;
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+
+    h1 {
+      font-size: 20px;
+      line-height: 39px;
+    }
+  }
+}

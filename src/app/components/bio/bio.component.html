@@ -1,0 +1,10 @@
+<p class="user-bio" *ngIf="userBio; else noBio">
+  {{
+    userBio.length > maxBioLength
+      ? (userBio | slice: 0:maxBioLength) + "..."
+      : userBio
+  }}
+</p>
+<ng-template #noBio>
+  <p class="user-bio not-available">User Bio Not Available</p>
+</ng-template>

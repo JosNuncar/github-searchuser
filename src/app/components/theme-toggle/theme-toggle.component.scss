@@ -1,0 +1,32 @@
+.theme-toggle-container {
+  display: flex;
+  gap: 16px;
+  color: var(--primary-text);
+
+  .theme-icon {
+    display: flex;
+    gap: 16px;
+
+    &.dark {
+      &:hover {
+        color: var(--icon-hover);
+        cursor: pointer;
+      }
+    }
+
+    &.light {
+      color: var(--accent-text);
+      &:hover {
+        color: #222731;
+        cursor: pointer;
+      }
+    }
+
+    .theme-text {
+      font-size: 13px;
+      font-weight: var(--bold);
+      letter-spacing: 2.5px;
+      line-height: 19px;
+    }
+  }
+}

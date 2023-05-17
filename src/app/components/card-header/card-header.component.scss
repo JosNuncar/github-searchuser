@@ -1,0 +1,68 @@
+@import "src/styles.scss";
+
+.header-container:not(.desktop) {
+  display: flex;
+  flex-direction: column;
+  line-height: 19px;
+  overflow: hidden;
+
+  .user-name {
+    line-height: 24px;
+    color: var(--primary-text);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 16px;
+
+    @include respond-to("tablet") {
+      font-size: 26px;
+      line-height: 38px;
+    }
+  }
+
+  .gh-user-page {
+    color: var(--button-bg);
+    text-decoration: none;
+    font-size: 13px;
+
+    @include respond-to("tablet") {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .joined-date {
+    font-size: 13px;
+    margin-top: 6px;
+
+    @include respond-to("tablet") {
+      font-size: 15px;
+      line-height: 22px;
+    }
+  }
+}
+
+.header-container.desktop {
+  display: flex;
+  flex-direction: column;
+  line-height: 39px;
+  overflow: hidden;
+
+  .name-date {
+    display: flex;
+    justify-content: space-between;
+    line-height: 24px;
+
+    .user-name {
+      color: var(--primary-text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 26px;
+    }
+  }
+
+  .gh-user-page {
+    color: var(--button-bg);
+    text-decoration: none;
+    font-size: 13px;
+  }
+}

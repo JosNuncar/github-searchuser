@@ -1,0 +1,90 @@
+@import "src/styles.scss";
+
+.card:not(.desktop) {
+  margin-top: 16px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  color: var(--accent-text);
+  box-shadow: var(--input-box-shadow);
+
+   @include respond-to("tablet") {
+    margin-top: 24px;
+  }
+
+  .card-content-container {
+    padding: 32px 24px;
+    display: flex;
+    flex-wrap: wrap;
+
+     @include respond-to("tablet") {
+      padding: 40px;
+    }
+
+    .card-header {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .img-container {
+      img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+
+         @include respond-to("tablet") {
+          width: 117px;
+          height: 117px;
+        }
+      }
+    }
+
+    .user-info-container {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+      @include respond-to("tablet") {
+        margin-left: 40px;
+      }
+    }
+
+    .user-bio-container {
+      margin: 28px 0 24px 0;
+      width: 100%;
+
+       @include respond-to("tablet") {
+        margin: 24px 0 32px 0;
+      }
+    }
+
+    .user-other-container {
+      width: 100%;
+    }
+  }
+}
+
+.card.desktop {
+  margin-top: 16px;
+  background: var(--card-bg);
+  border-radius: 15px;
+  color: var(--accent-text);
+  box-shadow: var(--input-box-shadow);
+
+  .card-content-container {
+    display: flex;
+    padding: 48px;
+    gap: 38px;
+
+    .img-container {
+      img {
+        width: 117px;
+        height: 117px;
+        border-radius: 50%;
+      }
+    }
+
+    .user-bio-container {
+      margin: 20px 0 32px 0;
+    }
+  }
+}

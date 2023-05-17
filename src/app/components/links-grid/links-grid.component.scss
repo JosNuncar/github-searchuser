@@ -1,0 +1,54 @@
+@import "src/styles.scss";
+
+.links-grid {
+  display: grid;
+  grid-gap: 14px;
+  font-size: 13px;
+
+  @include respond-to("tablet") {
+    grid-template-columns: 1fr 1fr;
+    font-size: 15px;
+    gap: 19px 64px;
+  }
+
+  @include respond-to("desktop") {
+    font-size: 13px;
+  }
+
+  .grid-item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 8fr;
+
+    @include respond-to("tablet") {
+      grid-template-columns: 1fr 5fr;
+    }
+
+    &.two {
+      @include respond-to("tablet") {
+        grid-row: 2;
+      }
+    }
+  }
+
+  svg {
+    color: var(--accent-text);
+  }
+
+  a {
+    color: var(--accent-text);
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .not-available {
+    color: var(--accent-text);
+    opacity: 0.5;
+
+    svg {
+      opacity: 0.5;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<ng-container *ngIf="user">
+  <div class="card" *ngIf="!isLargeScreen; else largeScreen">
+    <div class="card-content-container">
+      <div class="card-header">
+        <div class="img-container tablet">
+          <img src="{{ userInfo.avatarUrl }}" alt="user's avatar" />
+        </div>
+        <div class="user-info-container">
+          <app-card-header [userInfo]="userInfo"></app-card-header>
+        </div>
+      </div>
+      <div class="user-bio-container">
+        <app-bio [userBio]="userBio"></app-bio>
+      </div>
+      <div class="user-other-container">
+        <app-stats-block [userStats]="userStats"></app-stats-block>
+        <app-links-grid [userLinks]="userLinks"></app-links-grid>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #largeScreen>
+    <div class="card desktop">
+      <div class="card-content-container">
+        <div class="img-container">
+          <img src="{{ userInfo.avatarUrl }}" alt="user's avatar" />
+        </div>
+        <div class="user-container">
+          <div class="user-info-container">
+            <app-card-header
+              [userInfo]="userInfo"
+              [isLargeScreen]="isLargeScreen"
+            ></app-card-header>
+          </div>
+          <div class="user-bio-container">
+            <app-bio [userBio]="userBio"></app-bio>
+          </div>
+          <div class="user-other-container">
+            <app-stats-block [userStats]="userStats"></app-stats-block>
+            <app-links-grid [userLinks]="userLinks"></app-links-grid>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ng-container>
